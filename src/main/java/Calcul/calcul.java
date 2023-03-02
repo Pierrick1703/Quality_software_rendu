@@ -42,8 +42,6 @@ public class calcul {
                     result.add(chiffre);
                 }
             }
-        }else{ //Les nombres fournit ne sont pas dans un ordre A < B
-            throw new Error("Fin du programme problème dans les paramètres");
         }
         return result;
     }

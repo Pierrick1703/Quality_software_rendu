@@ -50,7 +50,7 @@ public class testCalcul
     public void testThrowError(){
         ex = assertThrows(Error.class,()-> c.calculNombreParfait(valeur,valeur2),"erreur exception");
         ex1 = assertThrows(Error.class,()-> c.calculNombreParfait(valeur5,valeur),"erreur exception");
-        ex2 = assertThrows(Error.class,()-> c.calculNombreParfait(valeur6,valeur4),"erreur exception");
+        ex2 = assertThrows(Error.class,()-> c.calculNombreParfait(valeur4,valeur6),"erreur exception");
     }
 
 
