@@ -1,0 +1,150 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > calcul</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">Calcul</a>
+</div>
+
+<h1>Coverage Summary for Class: calcul (Calcul)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">calcul</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    95,5%
+  </span>
+  <span class="absValue">
+    (21/22)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package Calcul;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import java.util.ArrayList;
+<i class="no-highlight">4</i>&nbsp;import java.util.List;
+<i class="no-highlight">5</i>&nbsp;
+<b class="fc"><i class="no-highlight">6</i>&nbsp;public class calcul {</b>
+<i class="no-highlight">7</i>&nbsp;
+<i class="no-highlight">8</i>&nbsp;    /* Fonction de test si les valeurs en paramètres sont bien exploitable (A &lt; B)*/
+<i class="no-highlight">9</i>&nbsp;    boolean testValeur(int A, int B){
+<b class="fc"><i class="no-highlight">10</i>&nbsp;        boolean result = false;</b>
+<b class="fc"><i class="no-highlight">11</i>&nbsp;        if(A &lt; B){</b>
+<b class="fc"><i class="no-highlight">12</i>&nbsp;            result = true;</b>
+<i class="no-highlight">13</i>&nbsp;        } else{
+<b class="fc"><i class="no-highlight">14</i>&nbsp;            throw new Error(&quot;Il faut que le premier nombre soit strictement supérieur au second&quot;);</b>
+<i class="no-highlight">15</i>&nbsp;        }
+<b class="fc"><i class="no-highlight">16</i>&nbsp;        return result;</b>
+<i class="no-highlight">17</i>&nbsp;    }
+<i class="no-highlight">18</i>&nbsp;
+<i class="no-highlight">19</i>&nbsp;/**
+<i class="no-highlight">20</i>&nbsp; * Fonction publique qui retourne un ArrayList d&#39;entier correspondant aux nombres parfaits
+<i class="no-highlight">21</i>&nbsp; * avec en paramètre un nombre de départ et un d&#39;arriver
+<i class="no-highlight">22</i>&nbsp; * */
+<i class="no-highlight">23</i>&nbsp;    public ArrayList&lt;Integer&gt; calculNombreParfait(int A, int B){
+<b class="fc"><i class="no-highlight">24</i>&nbsp;        ArrayList&lt;Integer&gt;  result = new ArrayList&lt;Integer&gt;();</b>
+<b class="fc"><i class="no-highlight">25</i>&nbsp;        if(testValeur(A,B)){//vérification que le nombre A est plus petit que B</b>
+<b class="fc"><i class="no-highlight">26</i>&nbsp;            int intervalle = B - A;</b>
+<b class="fc"><i class="no-highlight">27</i>&nbsp;            for(int i = 0; i &lt; intervalle; i++){//Boucle pour vérifier chaque valeur dans l&#39;intervalle entre A et B</b>
+<b class="fc"><i class="no-highlight">28</i>&nbsp;                int chiffre = B - i + 1;</b>
+<b class="fc"><i class="no-highlight">29</i>&nbsp;                String number = String.valueOf(chiffre);</b>
+<b class="fc"><i class="no-highlight">30</i>&nbsp;                char[] digit = number.toCharArray();</b>
+<b class="fc"><i class="no-highlight">31</i>&nbsp;                int sum = 0;</b>
+<b class="fc"><i class="no-highlight">32</i>&nbsp;                for(int j = 0; j &lt; digit.length;j++){//Boucle pour séparer et calculer chaque digit pour chacun des nombres de l&#39;intervalle</b>
+<b class="fc"><i class="no-highlight">33</i>&nbsp;                    int valeur = Integer.parseInt(Character.toString(digit[j]));//transformation d&#39;un type char en string puis en int</b>
+<b class="fc"><i class="no-highlight">34</i>&nbsp;                    sum += valeur*valeur;</b>
+<i class="no-highlight">35</i>&nbsp;                }
+<b class="fc"><i class="no-highlight">36</i>&nbsp;                if(sum == 1){</b>
+<b class="fc"><i class="no-highlight">37</i>&nbsp;                    result.add(chiffre);</b>
+<i class="no-highlight">38</i>&nbsp;                }
+<i class="no-highlight">39</i>&nbsp;            }
+<b class="fc"><i class="no-highlight">40</i>&nbsp;        }else{ //Les nombres fournit ne sont pas dans un ordre A &lt; B</b>
+<b class="nc"><i class="no-highlight">41</i>&nbsp;            throw new Error(&quot;Fin du programme problème dans les paramètres&quot;);</b>
+<i class="no-highlight">42</i>&nbsp;        }
+<b class="fc"><i class="no-highlight">43</i>&nbsp;        return result;</b>
+<i class="no-highlight">44</i>&nbsp;    }
+<i class="no-highlight">45</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-02-28 16:50</div>
+</div>
+</body>
+</html>
